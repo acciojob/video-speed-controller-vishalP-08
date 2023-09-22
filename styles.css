@@ -1,2 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* Styles for the video player */
+    .video-container {
+      position: relative;
+      max-width: 500px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+    }
 
-/* Your CSS Code here. */
+    .video-player {
+      width: 100%;
+      height: auto;
+    }
+
+    .controls {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+    }
+
+    .play-pause-button::before {
+      content: "►"; /* Play button icon */
+      font-size: 24px;
+    }
+
+    .play-pause-button.playing::before {
+      content: "❚ ❚"; /* Pause button icon */
+    }
+
+    .progress-bar {
+      width: 100%;
+      height: 10px;
+      background-color: #ccc;
+      margin-top: 10px;
+      position: relative;
+    }
+
+    .progress-filled {
+      height: 100%;
+      width: 0;
+      background-color: #00aaff;
+    }
+  </style>
+</head>
+<body>
+  <div class="video-container">
+    <video class="video-player" controls>
+      <source src="http://clips.vorwaerts-gmbh.de/VfE_html5.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="controls">
+      <button class="play-pause-button"></button>
+    </div>
+    <div class="progress-bar">
+      <div class="progress-filled"></div>
+    </div>
+  </div>
+</body>
+</html>
